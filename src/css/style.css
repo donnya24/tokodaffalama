@@ -1,0 +1,60 @@
+/* smooth scroll & modern card hover */
+html {
+  scroll-behavior: smooth;
+}
+
+.product-card {
+  transition: all 0.25s ease;
+  border: 1px solid rgba(21, 128, 61, 0.1);
+  background: #ffffff;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 70, 0, 0.3),
+    0 8px 10px -6px rgba(0, 50, 0, 0.2);
+  border-color: #16a34a;
+}
+
+.whatsapp-float {
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 15px -3px rgba(0, 70, 0, 0.4);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) rotate(2deg);
+  background-color: #15803d;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #16a34a;
+  transition: width 0.2s;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 40, 0, 0.85) 0%,
+    rgba(0, 60, 0, 0.6) 50%,
+    rgba(0, 30, 0, 0.4) 100%
+  );
+}
+
+.green-black-gradient {
+  background: linear-gradient(135deg, #052e16 0%, #0f3b1a 100%);
+}

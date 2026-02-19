@@ -1,0 +1,94 @@
+<nav
+  class="bg-black/90 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-green-800"
+  x-data="{ menuOpen: false }"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo / Nama toko -->
+      <div class="flex items-center space-x-3">
+        <div
+          class="bg-gradient-to-br from-green-700 to-green-900 text-white p-2 rounded-xl shadow-lg"
+        >
+          <i class="fas fa-store text-xl"></i>
+        </div>
+        <span class="font-bold text-xl text-white">Toko Daffa</span>
+        <span
+          class="hidden sm:inline-block bg-green-900 text-green-200 text-xs px-3 py-1 rounded-full border border-green-700"
+          >Sembako, bensin eceran + lpg 3kg</span
+        >
+      </div>
+      <!-- menu tengah (desktop) -->
+      <div class="hidden md:flex space-x-8 text-green-200 font-medium">
+        <a href="#beranda" class="nav-link hover:text-white transition">Beranda</a>
+        <a href="#produk" class="nav-link hover:text-white transition">Produk</a>
+        <a href="#tentang" class="nav-link hover:text-white transition">Tentang</a>
+        <a href="#kontak" class="nav-link hover:text-white transition">Kontak</a>
+      </div>
+      <!-- tombol WA cepat (desktop) -->
+      <a
+        href="https://wa.me/+6282264628643?text=Halo%20Toko%20Daffa%2C%20saya%20mau%20belanja"
+        class="hidden md:flex items-center gap-2 bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md transition-all"
+      >
+        <i class="fab fa-whatsapp"></i> <span>Hubungi</span>
+      </a>
+      <!-- mobile menu button -->
+      <button
+        @click="menuOpen = !menuOpen"
+        class="md:hidden text-green-200 text-2xl focus:outline-none"
+      >
+        <i :class="menuOpen ? 'fas fa-times' : 'fas fa-bars'"></i>
+      </button>
+    </div>
+    <!-- dropdown mobile -->
+    <div
+      x-show="menuOpen"
+      @click.away="menuOpen = false"
+      x-transition.duration.200ms
+      class="md:hidden pb-4 space-y-2 text-green-200"
+    >
+      <a
+        href="#beranda"
+        class="block py-2 hover:bg-green-900 px-2 rounded"
+        @click="menuOpen = false"
+        >🏠 Beranda</a
+      >
+      <a
+        href="#produk"
+        class="block py-2 hover:bg-green-900 px-2 rounded"
+        @click="menuOpen = false"
+        >🛒 Produk</a
+      >
+      <a
+        href="#tentang"
+        class="block py-2 hover:bg-green-900 px-2 rounded"
+        @click="menuOpen = false"
+        >📖 Tentang</a
+      >
+      <a
+        href="#kontak"
+        class="block py-2 hover:bg-green-900 px-2 rounded"
+        @click="menuOpen = false"
+        >📞 Kontak</a
+      >
+      <a
+        href="https://wa.me/+6282264628643?text=Halo%20Toko%20Daffa%2C%20saya%20mau%20belanja"
+        class="flex items-center gap-2 bg-green-700 text-white px-3 py-2 rounded-full text-sm w-fit"
+      >
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- Script untuk mengatasi masalah sticky pada komponen yang di-load -->
+<script>
+  (function() {
+    // Memastikan navbar tetap sticky setelah komponen dimuat
+    const navbar = document.currentScript.parentElement;
+    if (navbar) {
+      navbar.style.position = 'sticky';
+      navbar.style.top = '0';
+      navbar.style.zIndex = '50';
+    }
+  })();
+</script>
